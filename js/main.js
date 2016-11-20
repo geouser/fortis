@@ -128,7 +128,7 @@ jQuery(document).ready(function($) {
              setTimeout(function(){
                 $('.sidebar').css({
                     'opacity': '0',
-                    'bottom': '-100%'
+                    'left': '-100%'
                 });
             }, 400);
         }

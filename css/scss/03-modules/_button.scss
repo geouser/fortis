@@ -9,6 +9,8 @@
     min-width: 155px;
     overflow: hidden;
     font: 18px $dinb;
+    @include transition(all, .2s);
+    cursor: pointer;
     &:after {
         content: "";
         display: block;
@@ -25,4 +27,11 @@
         z-index: -1;
         right: 19px;
     }
+    &:hover {
+        padding-right: 75px;
+    }
+}
+a.button {
+    display: inline-block;
+    line-height: 48px;
 }
