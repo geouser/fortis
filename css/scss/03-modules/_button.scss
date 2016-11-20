@@ -1,0 +1,28 @@
+.button {
+    background: none;
+    height: 50px;
+    border: none;
+    padding: 0 60px 0 20px;
+    position: relative;
+    text-transform: uppercase;
+    color: #FFF;
+    min-width: 155px;
+    overflow: hidden;
+    font: 18px $dinb;
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 120%;
+        top: 0;
+        height: 100%;
+        background-color: $orange;
+        -webkit-transform: skewX(-33deg);
+           -moz-transform: skewX(-33deg);
+            -ms-transform: skewX(-33deg);
+             -o-transform: skewX(-33deg);
+                transform: skewX(-33deg);
+        z-index: -1;
+        right: 19px;
+    }
+}

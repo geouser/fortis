@@ -1,0 +1,119 @@
+.section {
+    background-position: 50% 50%;
+    -webkit-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+    position: relative;
+    padding-left: 25% !important;
+    .wrapper {
+        width: 100%;
+    }
+    p {
+        display: block;
+    }
+}
+
+.line {
+    position: absolute;
+    width: 1px;
+    height: 0%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgba(255,255,255,.2);
+    -webkit-transition: height 1s;
+       -moz-transition: height 1s;
+        -ms-transition: height 1s;
+         -o-transition: height 1s;
+            transition: height 1s;
+    &--first {
+        left: 25%;
+    }
+    &--second {
+        left: 50%;
+        -webkit-transition-delay: .4s;
+           -moz-transition-delay: .4s;
+            -ms-transition-delay: .4s;
+             -o-transition-delay: .4s;
+                transition-delay: .4s;
+    }
+    &--third {
+        left: 75%;
+        -webkit-transition-delay: .8s;
+           -moz-transition-delay: .8s;
+            -ms-transition-delay: .8s;
+             -o-transition-delay: .8s;
+                transition-delay: .8s;
+    }
+    &.active {
+        height: 100%;
+    }
+}
+.section--1 .line {
+    &--first {
+        -webkit-transition-delay: .4s;
+           -moz-transition-delay: .4s;
+            -ms-transition-delay: .4s;
+             -o-transition-delay: .4s;
+                transition-delay: .4s;
+    }
+    &--second {
+        -webkit-transition-delay: .8s;
+           -moz-transition-delay: .8s;
+            -ms-transition-delay: .8s;
+             -o-transition-delay: .8s;
+                transition-delay: .8s;
+    }
+    &--third {
+        -webkit-transition-delay: 1.2s;
+           -moz-transition-delay: 1.2s;
+            -ms-transition-delay: 1.2s;
+             -o-transition-delay: 1.2s;
+                transition-delay: 1.2s;
+    }
+    &.active {
+        height: 100%;
+    }
+}
+.section__title {
+    display: inline-block;
+    margin-bottom: 5px;
+    overflow: hidden;
+    height: 60px;
+    line-height: 60px;
+    text-transform: uppercase;
+    padding: 0 60px 0 20px;
+    color: #FFF;
+    font-size: 30px;
+    opacity: 0;
+    position: relative;
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 120%;
+        top: 0;
+        height: 100%;
+        background-color: $orange;
+        -webkit-transform: skewX(-33deg);
+           -moz-transform: skewX(-33deg);
+            -ms-transform: skewX(-33deg);
+             -o-transform: skewX(-33deg);
+                transform: skewX(-33deg);
+        z-index: -1;
+        right: 19px;
+    }
+}
+
+.section__text {
+    background-color: $white;
+    padding: 15px 20px 24px;
+    margin-bottom: 5px;
+    max-width: 530px;
+    opacity: 0;
+    line-height: 22px;
+}
+
+.section button {
+    opacity: 0;
+}
