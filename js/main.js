@@ -14,7 +14,7 @@ jQuery(document).ready(function($) {
     }, 1000);
     setTimeout(function(){
         $('.section--1 .section__text').addClass('magictime spaceInLeft');
-    }, 1400);
+    }, 1600);
     setTimeout(function(){
         $('.section--1 .button').addClass('magictime boingInUp');
     }, 2400);
@@ -28,10 +28,10 @@ jQuery(document).ready(function($) {
                 //Navigation
                 menu: '#menu',
                 lockAnchors: false,
-                anchors:['firstPage', 'secondPage'],
+                anchors:['1', '2', '3', '4'],
                 navigation: true,
                 navigationPosition: 'left',
-                navigationTooltips: ['firstPage', 'secondPage'],
+                navigationTooltips: [],
                 showActiveTooltip: false,
                 slidesNavigation: false,
                 slidesNavPosition: 'bottom',

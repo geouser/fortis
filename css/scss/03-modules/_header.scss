@@ -290,7 +290,7 @@
 
 #fp-nav {
     position: fixed;
-    right: 34px;
+    right: 37px;
     top: 0;
     bottom: 0;
     margin: auto !important;
@@ -314,4 +314,93 @@
     .fp-tooltip {
         display: none;
     }
+}
+
+.copy {
+    position: fixed;
+    bottom: 133px;
+    left: -83px;
+    -webkit-transform: rotate(-90deg); 
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    width: 244px;
+    height: 21px;
+    font: 16px $dinm;
+    color: $text;
+}
+
+.catalog {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    left: -8px;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    width: 90px;
+    height: 21px;
+    font: 16px $dinm;
+    color: #444;
+    i {
+        width: 23px;
+        height: 23px;
+        margin-right: 7px;
+        display: inline-block;
+        vertical-align: middle;
+        background-image: url("../images/cat.png");
+        -webkit-background-size: 100% 100%;
+             -o-background-size: 100% 100%;
+                background-size: 100% 100%;
+    }
+    span {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    &:hover {
+        span {
+            color: $orange;
+        }
+        i {
+            background-image: url("../images/cat_h.png");
+        }
+    }
+}
+
+.languages {
+    position: fixed;
+    bottom: 84px;
+    right: -38px;
+    -webkit-transform: rotate(90deg); 
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    width: 155px;
+    height: 21px;
+    li {
+        list-style-type: none;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 18px;
+        font: 16px $dinm;
+        color: $text;
+        a {
+            font: 16px $dinm;
+            color: $text;
+        }
+        &:last-of-type {
+            margin-right: 0;
+        }
+        &:hover {
+            color: $orange;
+            a {
+                color: $orange;
+            }
+        }
+    }
+}
+
+.hamb {
+    position: fixed;
+    top: 20px;
+    right: 26px;
 }
