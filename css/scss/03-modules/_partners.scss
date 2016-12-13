@@ -1,0 +1,46 @@
+.partners-section {
+    background-color: #eee;
+    height: 100%;
+    overflow: auto;
+
+    .mCSB_inside>.mCSB_container {
+        margin-right: 0;
+    }
+
+    h1 {
+        z-index: 5;
+    }
+}
+
+.no-padding {
+    padding-left: 0!important
+}
+
+.partners-box {
+    @extend %clearfix;
+    height: 100%;
+    overflow: hidden;
+}
+
+.partner-item {
+    width: calc(25% + 1px);
+    border: 1px solid #ccc;
+    margin-top: -1px;
+    margin-left: -1px;
+    float: left;
+    border-top: 0;
+    @extend %vertAlign;
+    text-align: center;
+
+    &:nth-child(4n+4) {
+        border-right: 0;
+    }
+
+    img {
+        max-width: 80%;
+        max-height: 80%;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: -2px;
+    }
+}

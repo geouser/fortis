@@ -5,7 +5,30 @@ window.params = {
 };
 
 
+
+for ( var i = 1; i <= 4; i++ ) {
+    $('.partners-box').prepend('<div class="partner-item"></div>');
+}
+$(window).on('load resize', function(event) {
+    event.preventDefault();
+    var vh = $(this).height() - 60;
+    $('.partner-item').height( vh/5 );
+});
+
+
 jQuery(document).ready(function($) {
+
+    if ( $('.scroll').length > 0 ) {
+        $('.scroll').mCustomScrollbar({
+            theme: 'dark',
+            axis: 'y'
+        });
+    }
+
+
+
+
+
 
     $('body').addClass('loaded');
 
