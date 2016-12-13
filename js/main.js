@@ -45,15 +45,17 @@ jQuery(document).ready(function($) {
     /*---------------------------
                                   Fullpage
     ---------------------------*/
-    var interval;
-    var timer = function(){
-        interval = setInterval(function(){
-           $.fn.fullpage.moveSectionDown(); 
-        },6000);
-    };
 
     if ($(window).width() > 1200) {
        if ( $('#fullpage').length > 0 ) {
+
+            var interval;
+            var timer = function(){
+                interval = setInterval(function(){
+                   $.fn.fullpage.moveSectionDown(); 
+                },6000);
+            };
+
             $('#fullpage').fullpage({
                 //Navigation
                 menu: '#menu',
