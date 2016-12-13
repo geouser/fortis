@@ -22,6 +22,13 @@ jQuery(document).ready(function($) {
     /*---------------------------
                                   Fullpage
     ---------------------------*/
+    var interval;
+    var timer = function(){
+        interval = setInterval(function(){
+           $.fn.fullpage.moveSectionDown(); 
+        },6000);
+    };
+
     if ($(window).width() > 1200) {
        if ( $('#fullpage').length > 0 ) {
             $('#fullpage').fullpage({
@@ -77,6 +84,7 @@ jQuery(document).ready(function($) {
                 responsiveHeight: 0,
                 responsiveSlides: false,
                 responsiveWidth: 1200,
+                loopBottom: true,
 
                 //Custom selectors
                 sectionSelector: '.section',
@@ -95,8 +103,11 @@ jQuery(document).ready(function($) {
                             $('.active .button:not(.section--1 .button)').addClass('magictime boingInUp');
                         }, 1200);
                         $('.active .line').addClass('active');
+                        clearInterval(interval);
+                        timer();
                 },
-                afterRender: function(){},
+                afterRender: function(){
+                },
                 afterResize: function(){},
                 afterResponsive: function(isResponsive){},
                 afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
@@ -115,22 +126,36 @@ jQuery(document).ready(function($) {
         event.preventDefault();
         $(this).toggleClass('active');
         $(this).siblings('.sidebar').toggleClass('active');
+        clearInterval(interval);
         if ($('.sidebar').hasClass('active')) {
             $('.sidebar').css({
-                'left': '0',
-                'opacity': '1'
+                'transform': 'translateX(0%)'
             });
-            $('#slider').css('top', '0');
-            $('.mainNav').css('top', '0');
+            $('#slider').css('transform', 'translateY(0)');
+            $('.mainNav').css('transform', 'translateY(0)');
+            if (!$('#slider').hasClass('active')) {
+                $(function(){
+                    if(!flux.browser.supportsTransitions)
+                        alert("Flux Slider requires a browser that supports CSS3 transitions");
+                        
+                    window.f = new flux.slider('#slider', {
+                        pagination: false,
+                        autoplay: true,
+                        transitions: ['blocks2']
+                    });
+                    console.log('go');
+                });
+            }
+            $('#slider').addClass('active');
         } else {
-            $('#slider').css('top', '100%');
-            $('.mainNav').css('top', '-100%');
+            $('#slider').css('transform', 'translateY(100%)');
+            $('.mainNav').css('transform', 'translateY(-100%)');
              setTimeout(function(){
                 $('.sidebar').css({
-                    'opacity': '0',
-                    'left': '-100%'
+                    'transform': 'translateX(-100%)'
                 });
             }, 400);
+            timer();
         }
     });
 

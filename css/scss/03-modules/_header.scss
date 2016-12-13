@@ -1,13 +1,17 @@
          
 .sidebar {
-    @include position(fixed, 0, auto, auto, -100%);
+    @include position(fixed, 0, auto, auto, 0%);
     width: 100%;
     height: 100%;
     z-index: 110;
     @include flex();
     border-left: 30px solid #fafafa;
     border-right: 30px solid #fafafa;
-    opacity: 0;
+    -webkit-transform: translateX(-100%);
+       -moz-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+         -o-transform: translateX(-100%);
+            transform: translateX(-100%);
 }
 
 
@@ -18,13 +22,22 @@
     width: 300px;
     padding: 160px 30px 160px 0;
     position: relative;
-    top: -100%;
+    top: 0%;
     height: 100%;
-     -webkit-transition: all .4s;
-       -moz-transition: all .4s;
-        -ms-transition: all .4s;
-         -o-transition: all .4s;
-            transition: all .4s;
+    -webkit-transform: translateY(-100%);
+       -moz-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+         -o-transform: translateY(-100%);
+            transform: translateY(-100%);
+     -webkit-transition: transform 300ms linear;
+       -moz-transition: transform 300ms linear;
+        -ms-transition: transform 300ms linear;
+         -o-transition: transform 300ms linear;
+            transition: transform 300ms linear;
+        will-change: transform;
+    @include m1600 {
+        padding-top: 125px;
+    }
     &:before {
         display: inline-block;
         vertical-align: middle;
@@ -62,6 +75,10 @@
                     &:hover:before {
                         color: $orange;
                     }
+                    @include m1600 {
+                        margin-bottom: 15px;
+                        font-size: 22px;
+                    }
                 }
             }
         }
@@ -80,26 +97,35 @@
     #slider {
         width: 100%;
         position: relative;
-        top: 100%;
-        -webkit-transition: all .4s;
-       -moz-transition: all .4s;
-        -ms-transition: all .4s;
-         -o-transition: all .4s;
-            transition: all .4s;
+        top: 0%;
+        -webkit-transform: translateY(100%);
+       -moz-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+         -o-transform: translateY(100%);
+            transform: translateY(100%);
+     -webkit-transition: transform 300ms linear;
+       -moz-transition: transform 300ms linear;
+        -ms-transition: transform 300ms linear;
+         -o-transition: transform 300ms linear;
+            transition: transform 300ms linear;
+        will-change: transform;
+        width: 100% !important;
+        height: 100% !important;
         .fluxslider,
         .surface,
         .images {
             width: 100% !important;
+            height: 100% !important;
         }
         .images {
             div {
                 min-width: 100%;
                 min-height: 100%;
                 max-width: 120%;
-                max-height: 120%;
-                    -webkit-background-size: 100% auto !important;
-                         -o-background-size: 100% auto !important;
-                            background-size: 100% auto !important;
+                max-height: 100%;
+                    -webkit-background-size: auto 100% !important;
+                         -o-background-size: auto 100% !important;
+                            background-size: auto 100%  !important;
 
             }
         }
@@ -120,6 +146,9 @@
     text-align: center;
     width: 100%;
     padding-right: 30px;
+    @include m1600 {
+        bottom: 10px;
+    }
     &__item {
         display: inline-block;
         vertical-align: middle;
@@ -324,9 +353,12 @@
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
     width: 244px;
-    height: 21px;
+    height: 20px;
     font: 16px $dinm;
     color: $text;
+    @include m1600 {
+        font-size: 14px;
+    }
 }
 
 .catalog {
@@ -339,9 +371,12 @@
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
     width: 90px;
-    height: 21px;
+    height: 20px;
     font: 16px $dinm;
     color: #444;
+    @include m1600 {
+        font-size: 14px;
+    }
     i {
         width: 23px;
         height: 23px;
@@ -386,6 +421,9 @@
         a {
             font: 16px $dinm;
             color: $text;
+            @include m1600 {
+                font-size: 14px;
+            }
         }
         &:last-of-type {
             margin-right: 0;
