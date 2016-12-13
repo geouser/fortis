@@ -9,4 +9,16 @@
     top: 0; bottom: 0;
     margin:  auto;
     padding: 20px;
+    p {
+        margin-bottom: 25px;
+        line-height: 22px;
+    }
+    &__images {
+        @include flex();
+        img {
+            width: 48.5%;
+            display: block;
+            margin-bottom: 25px;
+        }
+    }
 }
