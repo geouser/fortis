@@ -20,7 +20,7 @@ jQuery(document).ready(function($) {
 
     if ( $('.scroll').length > 0 ) {
         $('.scroll').mCustomScrollbar({
-            theme: 'dark',
+            theme: 'minimal-dark',
             axis: 'y'
         });
     }
