@@ -18,9 +18,9 @@
 /* ------------------------------------ */
 /*  NAV STYLES  */
 .navigation {
-    background-color: #fafafa;
-    width: 300px;
     padding: 160px 30px 160px 0;
+    background-color: #fafafa;
+    width: 300px;    
     position: relative;
     top: 0%;
     height: 100%;
@@ -35,6 +35,10 @@
          -o-transition: transform 300ms linear;
             transition: transform 300ms linear;
         will-change: transform;
+    &--works {
+        width: 500px;
+        padding-left: 95px;
+    }
     @include m1600 {
         padding-top: 125px;
     }
@@ -129,6 +133,12 @@
 
             }
         }
+    }
+}
+
+.sidebar--right {
+    .sidebarSlider {
+        width: calc(100% - 500px);
     }
 }
 
@@ -374,6 +384,10 @@
       }
     }    
   }
+}
+
+#menu-toggle-2.active {
+    right: 470px;
 }
 
 #fp-nav {
