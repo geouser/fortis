@@ -23,10 +23,12 @@
 
        
         <!--=================================================================================================-->
-                                                    <!-- HEADER -->
-        <aside class="sidebar">
+                                                    <!-- SIDEBARS -->
 
-            <div class="mainNav"><!-- start navigation -->
+        <!-- start left sidebar -->
+        <aside class="sidebar sidebar--left">
+
+            <div class="navigation navigation--pages"><!-- start ppge navigation -->
                 <nav>
                     <ul>
                         <li><a href="#" class="active">Company</a></li>
@@ -35,7 +37,7 @@
                         <li><a href="#">Partners</a></li>
                         <li><a href="#">Contacts</a></li>
                     </ul>
-                </nav>
+                </nav>  
                 <div class="social">
                     <a href="" class="social__item social__item--fb"></a>
                     <a href="" class="social__item social__item--tw"></a>
@@ -54,12 +56,46 @@
                     <img src="images/slide-4.jpg" alt="">
                 </div>
             </div>
+        </aside>
+        <!-- end left sidebar -->
 
-        </aside><!-- end header -->
+        <!-- start right sidebar -->
+        <aside class="sidebar sidebar--right">
 
-        <a href="index.html" class="logo"><img src="images/logo.png" alt=""></a>
+            <div class="sidebarSlider">
+                <div id="slider">
+                    <img src="images/slide-1.jpg" alt="">
+                    <img src="images/slide-2.jpg" alt="">
+                    <img src="images/slide-3.jpg" alt="">
+                    <img src="images/slide-4.jpg" alt="">
+                </div>
+            </div>
 
-        <div id="menu-toggle" class="menu-button">
+            <div class="navigation navigation--works"><!-- start navigation -->
+                <nav>
+                    <ul>
+                        <li><a href="#" class="active">Company</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Projects</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Contacts</a></li>
+                    </ul>
+                </nav>
+                <div class="social">
+                    <a href="" class="social__item social__item--fb"></a>
+                    <a href="" class="social__item social__item--tw"></a>
+                    <a href="" class="social__item social__item--y"></a>
+                    <a href="" class="social__item social__item--inst"></a>
+                    <hr>
+                    <a href="http://www.gamidov.com/" class="gamidov"><img src="images/gamidov.png" alt=""></a>
+                </div>
+            </div><!-- end nav -->
+        </aside>
+        <!-- end right sidebar -->
+
+
+        <!-- left sidebar toggle -->
+        <div id="menu-toggle" class="menu-button" data-target=".sidebar--left">
             <div id="hamburger">
                 <span></span>
                 <span></span>
@@ -72,7 +108,26 @@
             </div>
         </div> 
 
+        <!-- right sidebar toggle -->        
+        <div id="menu-toggle-2" class="menu-button" data-target=".sidebar--right">
+            <div id="hamburger-2">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div id="cross-2">
+                <span></span>
+                <span></span>
+                </div>
+            </div>
+        </div> 
 
+        <a href="index.html" class="logo"><img src="images/logo.png" alt=""></a><!-- logo -->
+
+
+
+        <!--=================================================================================================-->
+                                                    <!-- MAIN AREA -->
 
         <div class="fullpage">
 
@@ -109,7 +164,6 @@
             <li><a href="">на русском</a></li>
             <li><a href="">azərbaycanca</a></li>
         </ul>
-        <img src="images/hamb.png" alt="" class="hamb">
 
 
         <!-- //////////////////////////////////////////////////////////////////////// -->

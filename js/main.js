@@ -147,34 +147,36 @@ jQuery(document).ready(function($) {
     ---------------------------*/
     $('.menu-button').on('click', function(event) {
         event.preventDefault();
+        var target = $(this).data('target');
         $(this).toggleClass('active');
-        $(this).siblings('.sidebar').toggleClass('active');
+        $('' + target + '').toggleClass('active');
         clearInterval(interval);
-        if ($('.sidebar').hasClass('active')) {
-            $('.sidebar').css({
+
+        if ($('' + target + '').hasClass('active')) {
+            $('' + target + '').css({
                 'transform': 'translateX(0%)'
             });
-            $('#slider').css('transform', 'translateY(0)');
-            $('.mainNav').css('transform', 'translateY(0)');
-            if (!$('#slider').hasClass('active')) {
+            $('' + target + ' #slider').css('transform', 'translateY(0)');
+            $('' + target + ' .navigation').css('transform', 'translateY(0)');
+            if (!$('' + target + '#slider').hasClass('active')) {
                 $(function(){
                     if(!flux.browser.supportsTransitions)
                         alert("Flux Slider requires a browser that supports CSS3 transitions");
                         
-                    window.f = new flux.slider('#slider', {
+                    window.f = new flux.slider('' + target + ' #slider', {
                         pagination: false,
                         autoplay: true,
                         transitions: ['blocks2']
                     });
-                    console.log('go');
+                    console.log('go');  
                 });
             }
             $('#slider').addClass('active');
         } else {
-            $('#slider').css('transform', 'translateY(100%)');
-            $('.mainNav').css('transform', 'translateY(-100%)');
+            $('' + target + ' #slider').css('transform', 'translateY(100%)');
+            $('' + target + ' .navigation').css('transform', 'translateY(-100%)');
              setTimeout(function(){
-                $('.sidebar').css({
+                $('' + target + '').css({
                     'transform': 'translateX(-100%)'
                 });
             }, 400);
