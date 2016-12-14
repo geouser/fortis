@@ -27,10 +27,7 @@ jQuery(document).ready(function($) {
 
 
 
-
-
-
-    $('body').addClass('loaded');
+    $('body').addClass('loaded');   
 
     setTimeout(function(){
         $('.section--1 .section__title').addClass('magictime spaceInLeft');
@@ -166,8 +163,7 @@ jQuery(document).ready(function($) {
                         pagination: false,
                         autoplay: true,
                         transitions: ['blocks2']
-                    });
-                    console.log('go');  
+                    });  
                 });
             }
             $('#slider').addClass('active');
@@ -179,7 +175,9 @@ jQuery(document).ready(function($) {
                     'transform': 'translateX(-100%)'
                 });
             }, 400);
-            timer();
+            if ( $('#fullpage').length > 0 ) {
+                timer();
+            }
         }
     });
 

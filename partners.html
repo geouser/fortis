@@ -21,13 +21,13 @@
     </head>
     <body>
 
-
-       
         <!--=================================================================================================-->
-                                                    <!-- HEADER -->
-        <aside class="sidebar">
+                                                    <!-- SIDEBARS -->
 
-            <div class="mainNav"><!-- start navigation -->
+        <!-- start left sidebar -->
+        <aside class="sidebar sidebar--left">
+
+            <div class="navigation navigation--pages"><!-- start ppge navigation -->
                 <nav>
                     <ul>
                         <li><a href="#" class="active">Company</a></li>
@@ -36,7 +36,7 @@
                         <li><a href="#">Partners</a></li>
                         <li><a href="#">Contacts</a></li>
                     </ul>
-                </nav>
+                </nav>  
                 <div class="social">
                     <a href="" class="social__item social__item--fb"></a>
                     <a href="" class="social__item social__item--tw"></a>
@@ -55,12 +55,54 @@
                     <img src="images/slide-4.jpg" alt="">
                 </div>
             </div>
+        </aside>
+        <!-- end left sidebar -->
 
-        </aside><!-- end header -->
+        <!-- start right sidebar -->
+        <aside class="sidebar sidebar--right">
 
-        <a href="index.html" class="logo"><img src="images/logo.png" alt=""></a>
+            <div class="sidebarSlider">
+                <div id="slider">
+                    <img src="images/slide-1.jpg" alt="">
+                    <img src="images/slide-2.jpg" alt="">
+                    <img src="images/slide-3.jpg" alt="">
+                    <img src="images/slide-4.jpg" alt="">
+                </div>
+            </div>
 
-        <div id="menu-toggle" class="menu-button">
+            <div class="navigation navigation--works"><!-- start navigation -->
+                <ul class="worksList scroll">
+                    <span class="worksList__title">Projects list</span>
+                    <a href="" class="worksList__item">
+                        <div class="worksList__item__info">
+                            <span class="date">02.12.2014</span>
+                            <span class="title">Ancora residence (new project)</span>
+                        </div>
+                        <div class="worksList__item__img" style="background-image: url('images/work_preview.jpg')"></div>
+                    </a>
+                    <a href="" class="worksList__item">
+                        <div class="worksList__item__info">
+                            <span class="date">02.12.2014</span>
+                            <span class="title">Ancora residence (new project)</span>
+                        </div>
+                        <div class="worksList__item__img" style="background-image: url('images/work_preview.jpg')"></div>
+                    </a>
+                    <a href="" class="worksList__item">
+                        <div class="worksList__item__info">
+                            <span class="date">02.12.2014</span>
+                            <span class="title">Ancora residence (new project)</span>
+                        </div>
+                        <div class="worksList__item__img" style="background-image: url('images/work_preview.jpg')"></div>
+                    </a>
+                </ul>
+            </div><!-- end nav -->
+        </aside>
+        <!-- end right sidebar -->
+
+        <a href="index.html" class="logo"><img src="images/logo.png" alt=""></a><!-- logo -->
+
+        <!-- left sidebar toggle -->
+        <div id="menu-toggle" class="menu-button" data-target=".sidebar--left">
             <div id="hamburger">
                 <span></span>
                 <span></span>
@@ -73,6 +115,25 @@
             </div>
         </div> 
 
+        <!-- right sidebar toggle -->        
+        <div id="menu-toggle-2" class="menu-button" data-target=".sidebar--right">
+            <div id="hamburger-2">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div id="cross-2">
+                <span></span>
+                <span></span>
+                </div>
+            </div>
+        </div> 
+
+
+
+
+        <!--=================================================================================================-->
+                                                    <!-- MAIN AREA -->
 
 
         <div class="fullpage" >
