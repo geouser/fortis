@@ -7,7 +7,7 @@ window.params = {
 
 
 for ( var i = 1; i <= 4; i++ ) {
-    $('.partners-box').prepend('<div class="partner-item"></div>');
+    $('.partners-box').prepend('<div class="partner-item' +' item-' + i + '"></div>');
 }
 $(window).on('load resize', function(event) {
     event.preventDefault();

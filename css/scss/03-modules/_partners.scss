@@ -23,6 +23,7 @@
 }
 
 .partner-item {
+    width: -webkit-calc(25% + 1px);
     width: calc(25% + 1px);
     border: 1px solid #ccc;
     margin-top: -1px;
@@ -31,6 +32,24 @@
     border-top: 0;
     @extend %vertAlign;
     text-align: center;
+
+    @media (max-width: 767px) {
+        width: -webkit-calc(33.3333% + 1px);
+        width: calc(33.3333% + 1px);
+
+        &.item-1 {
+            display: none;
+        }
+    }
+
+    @media (max-width: 450px) {
+        width: -webkit-calc(50% + 1px);
+        width: calc(50% + 1px);
+
+        &.item-2 {
+            display: none;
+        }
+    }
 
     &:nth-child(4n+4) {
         border-right: 0;
