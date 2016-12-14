@@ -58,7 +58,7 @@ jQuery(document).ready(function($) {
         $('#fullpage').fullpage({
             //Navigation
             menu: '#menu',
-            lockAnchors: false,
+            lockAnchors: true,
             anchors:['1', '2', '3', '4'],
             navigation: true,
             navigationPosition: 'left',
