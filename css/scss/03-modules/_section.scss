@@ -168,5 +168,11 @@
         border-left-width: 40px;
         border-right-width: 40px;
     }
+}
 
+@media (max-width: 767px) {
+    .fullpage {
+        border-left-width: 30px;
+        border-right-width: 30px;
+    }
 }
