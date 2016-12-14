@@ -98,7 +98,8 @@
         z-index: 1000;
         height: 100%;
     }
-    #slider {
+    #slider,
+    #sidebarImg {
         width: 100%;
         position: relative;
         top: 0%;
@@ -133,6 +134,12 @@
 
             }
         }
+    }
+    #sidebarImg {
+        background-position: 50% 50%;
+        -webkit-background-size: cover;
+             -o-background-size: cover;
+                background-size: cover;
     }
 }
 

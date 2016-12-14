@@ -141,6 +141,7 @@ jQuery(document).ready(function($) {
     /*---------------------------
                                   MENU TOGGLE
     ---------------------------*/
+    var init = false;
     $('.menu-button').on('click', function(event) {
         event.preventDefault();
         var target = $(this).data('target');
@@ -152,9 +153,10 @@ jQuery(document).ready(function($) {
             $('' + target + '').css({
                 'transform': 'translateX(0%)'
             });
-            $('' + target + ' #slider').css('transform', 'translateY(0)');
+            $('' + target + ' .side-slider').css('transform', 'translateY(0)');
             $('' + target + ' .navigation').css('transform', 'translateY(0)');
-            if (!$('' + target + '#slider').hasClass('active')) {
+            if (!$('' + target + '#slider').hasClass('active') && init == false) {
+                init = true;
                 $(function(){
                     if(!flux.browser.supportsTransitions)
                         alert("Flux Slider requires a browser that supports CSS3 transitions");
@@ -165,10 +167,12 @@ jQuery(document).ready(function($) {
                         transitions: ['blocks2']
                     });  
                 });
+            } else if (!$('' + target + '#slider').hasClass('active') && init == true) {
+                window.f.start();
             }
             $('#slider').addClass('active');
         } else {
-            $('' + target + ' #slider').css('transform', 'translateY(100%)');
+            $('' + target + ' .side-slider').css('transform', 'translateY(100%)');
             $('' + target + ' .navigation').css('transform', 'translateY(-100%)');
              setTimeout(function(){
                 $('' + target + '').css({
@@ -178,6 +182,7 @@ jQuery(document).ready(function($) {
             if ( $('#fullpage').length > 0 ) {
                 timer();
             }
+            window.f.stop();
         }
     });
 
