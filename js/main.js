@@ -46,99 +46,96 @@ jQuery(document).ready(function($) {
                                   Fullpage
     ---------------------------*/
 
-    if ($(window).width() > 1200) {
-       if ( $('#fullpage').length > 0 ) {
+   if ( $('#fullpage').length > 0 ) {
 
-            var interval;
-            var timer = function(){
-                interval = setInterval(function(){
-                   $.fn.fullpage.moveSectionDown(); 
-                },6000);
-            };
+        var interval;
+        var timer = function(){
+            interval = setInterval(function(){
+               $.fn.fullpage.moveSectionDown(); 
+            },6000);
+        };
 
-            $('#fullpage').fullpage({
-                //Navigation
-                menu: '#menu',
-                lockAnchors: false,
-                anchors:['1', '2', '3', '4'],
-                navigation: true,
-                navigationPosition: 'left',
-                navigationTooltips: [],
-                showActiveTooltip: false,
-                slidesNavigation: false,
-                slidesNavPosition: 'bottom',
+        $('#fullpage').fullpage({
+            //Navigation
+            menu: '#menu',
+            lockAnchors: false,
+            anchors:['1', '2', '3', '4'],
+            navigation: true,
+            navigationPosition: 'left',
+            navigationTooltips: [],
+            showActiveTooltip: false,
+            slidesNavigation: false,
+            slidesNavPosition: 'bottom',
 
-                //Scrolling
-                css3: true,
-                scrollingSpeed: 700,
-                autoScrolling: true,
-                fitToSection: true,
-                fitToSectionDelay: 1000,
-                scrollBar: false,
-                easing: 'easeInOutCubic',
-                easingcss3: 'ease',
-                loopBottom: false,
-                loopTop: false,
-                loopHorizontal: true,
-                continuousVertical: false,
-                continuousHorizontal: false,
-                scrollHorizontally: false,
-                interlockedSlides: false,
-                resetSliders: false,
-                fadingEffect: false,
-                normalScrollElements: '',
-                scrollOverflow: false,
-                scrollOverflowOptions: null,
-                touchSensitivity: 15,
-                normalScrollElementTouchThreshold: 5,
-                bigSectionsDestination: null,
+            //Scrolling
+            css3: true,
+            scrollingSpeed: 700,
+            autoScrolling: true,
+            fitToSection: true,
+            fitToSectionDelay: 1000,
+            scrollBar: false,
+            easing: 'easeInOutCubic',
+            easingcss3: 'ease',
+            loopBottom: false,
+            loopTop: false,
+            loopHorizontal: true,
+            continuousVertical: false,
+            continuousHorizontal: false,
+            scrollHorizontally: false,
+            interlockedSlides: false,
+            resetSliders: false,
+            fadingEffect: false,
+            normalScrollElements: '',
+            scrollOverflow: false,
+            scrollOverflowOptions: null,
+            touchSensitivity: 15,
+            normalScrollElementTouchThreshold: 5,
+            bigSectionsDestination: null,
 
-                //Accessibility
-                keyboardScrolling: true,
-                animateAnchor: true,
-                recordHistory: true,
+            //Accessibility
+            keyboardScrolling: true,
+            animateAnchor: true,
+            recordHistory: true,
 
-                //Design
-                controlArrows: true,
-                verticalCentered: true,
-                sectionsColor : '',
-                paddingTop: '100px',
-                paddingBottom: '65px',
-                fixedElements: '#menu',
-                responsiveWidth: 0,
-                responsiveHeight: 0,
-                responsiveSlides: false,
-                responsiveWidth: 1200,
-                loopBottom: true,
+            //Design
+            controlArrows: true,
+            verticalCentered: true,
+            sectionsColor : '',
+            paddingTop: '100px',
+            paddingBottom: '65px',
+            fixedElements: '#menu',
+            responsiveWidth: 0,
+            responsiveHeight: 0,
+            responsiveSlides: false,
+            loopBottom: true,
 
-                //Custom selectors
-                sectionSelector: '.section',
-                slideSelector: '.slide',
+            //Custom selectors
+            sectionSelector: '.section',
+            slideSelector: '.slide',
 
-                //events
-                onLeave: function(index, nextIndex, direction){},
-                afterLoad: function(anchorLink, index){
-                        setTimeout(function(){
-                            $('.active .section__title:not(.section--1 .section__title)').addClass('magictime spaceInLeft');
-                        }, 100);
-                        setTimeout(function(){
-                            $('.active .section__text:not(.section--1 .section__text)').addClass('magictime spaceInLeft');
-                        }, 500);
-                        setTimeout(function(){
-                            $('.active .button:not(.section--1 .button)').addClass('magictime boingInUp');
-                        }, 1200);
-                        $('.active .line').addClass('active');
-                        clearInterval(interval);
-                        timer();
-                },
-                afterRender: function(){
-                },
-                afterResize: function(){},
-                afterResponsive: function(isResponsive){},
-                afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
-                onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
-            });    
-        }
+            //events
+            onLeave: function(index, nextIndex, direction){},
+            afterLoad: function(anchorLink, index){
+                    setTimeout(function(){
+                        $('.active .section__title:not(.section--1 .section__title)').addClass('magictime spaceInLeft');
+                    }, 100);
+                    setTimeout(function(){
+                        $('.active .section__text:not(.section--1 .section__text)').addClass('magictime spaceInLeft');
+                    }, 500);
+                    setTimeout(function(){
+                        $('.active .button:not(.section--1 .button)').addClass('magictime boingInUp');
+                    }, 1200);
+                    $('.active .line').addClass('active');
+                    clearInterval(interval);
+                    timer();
+            },
+            afterRender: function(){
+            },
+            afterResize: function(){},
+            afterResponsive: function(isResponsive){},
+            afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
+            onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
+        });    
     }
     
 

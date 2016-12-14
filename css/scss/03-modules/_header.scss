@@ -138,6 +138,17 @@
     top: 0px;
     left: 79px;
     z-index: 1001;
+    width: 160px;
+    @media (max-width: 1024px) {
+        left: 40px;
+        width: 80px;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+
+    }
 }
 
 .social {
@@ -198,6 +209,12 @@
   * {
       transition: .1s ease-in-out;
   }
+
+  @media (max-width: 1024px) {
+    left: 8px;
+  }
+
+
   width:26px;
   height:18px;
   cursor:pointer;
@@ -325,6 +342,10 @@
     margin: auto !important;
     height: 90px;
     z-index: 100;
+
+    @media (max-width: 1024px) {
+        right: 16px;
+    }
     li {
         width: 6px;
         height: 6px;
@@ -359,6 +380,10 @@
     @include m1600 {
         font-size: 14px;
     }
+
+    @media (max-width: 1024px) {
+        left: -100px;
+    }
 }
 
 .catalog {
@@ -377,6 +402,11 @@
     @include m1600 {
         font-size: 14px;
     }
+
+    @media (max-width: 1024px) {
+        left: -26px;
+    }
+
     i {
         width: 23px;
         height: 23px;
@@ -411,6 +441,10 @@
     transform: rotate(90deg);
     width: 155px;
     height: 21px;
+
+    @media (max-width: 1024px) {
+        right: -58px;
+    }
     li {
         list-style-type: none;
         display: inline-block;
@@ -441,4 +475,8 @@
     position: fixed;
     top: 20px;
     right: 26px;
+
+    @media (max-width: 1024px) {
+        right: 8px;
+    }
 }
