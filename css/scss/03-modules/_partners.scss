@@ -37,10 +37,15 @@
     }
 
     img {
-        max-width: 80%;
-        max-height: 80%;
+        max-width: 60%;
+        max-height: 50%;
         display: inline-block;
         vertical-align: middle;
         margin-left: -2px;
     }
+}
+
+.mCustomScrollbar {
+    height: 100%;
+    overflow: hidden;
 }
