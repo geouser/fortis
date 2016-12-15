@@ -13,6 +13,8 @@ $(window).on('load resize', function(event) {
     event.preventDefault();
     var vh = $(this).height() - 60;
     $('.partner-item').height( vh/5 );
+
+    $('.project-item').width( $('.projects-box').width()/4 );
 });
 
 
@@ -25,8 +27,6 @@ jQuery(document).ready(function($) {
         });
     }
 
-
-
     $('body').addClass('loaded');   
 
     setTimeout(function(){
@@ -38,6 +38,36 @@ jQuery(document).ready(function($) {
     setTimeout(function(){
         $('.section--1 .button').addClass('magictime boingInUp');
     }, 2400);
+
+    /*---------------------------
+                                  SmoothScroll slider
+    ---------------------------*/
+    if ($(".projects-slider").length > 0) {
+
+        if (params.isMobile) {
+            $(".projects-slider").smoothDivScroll({
+                mousewheelScrolling: "",
+                manualContinuousScrolling: false,
+                autoScrollingMode: "",
+                touchScrolling: true,
+                mousewheelScrollingStep: 1,
+                hotSpotScrolling: false
+            });
+        } else {
+            $(".projects-slider").smoothDivScroll({
+                mousewheelScrolling: "",
+                manualContinuousScrolling: false,
+                autoScrollingMode: "",
+                touchScrolling: true,
+                mousewheelScrollingStep: 1,
+                autoScrollingInterval: 30,
+                hotSpotScrollingStep: 5,
+                hotSpotMouseDownSpeedBooster: 10,
+                easingAfterHotSpotScrolling: true
+            });
+        }
+        
+    };
 
     /*---------------------------
                                   Fullpage
