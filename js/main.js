@@ -326,8 +326,26 @@ jQuery(document).ready(function($) {
         var lat = $('#map_canvas').data('lat');
         var long = $('#map_canvas').data('lng');
 
-        var mapCenterCoord = new google.maps.LatLng(lat, long);
         var mapMarkerCoord = new google.maps.LatLng(lat, long);
+        
+        var mapCenterCoord = new google.maps.LatLng(lat, long-0.1);
+        var mapMarkerCoord = new google.maps.LatLng(lat, long);
+        
+        if ( $(window).width() <= 1024 ) {
+            mapCenterCoord = new google.maps.LatLng(lat, long);
+            mapMarkerCoord = new google.maps.LatLng(lat, long);
+        }
+
+        $(window).resize(function(event) {
+            if ( $(window).width() <= 1024 ) {
+                mapCenterCoord = new google.maps.LatLng(lat, long);
+                mapMarkerCoord = new google.maps.LatLng(lat, long);
+            } else {
+                mapCenterCoord = new google.maps.LatLng(lat, long-0.1);
+                mapMarkerCoord = new google.maps.LatLng(lat, long);
+            }
+        });
+
 
 
         var mapOptions = {
@@ -352,7 +370,7 @@ jQuery(document).ready(function($) {
             title:"LeaderGate"
         });
       
-        $(window).resize(function (){
+        $(window).on('resize', function (event){
             map.setCenter(mapCenterCoord);
         });
     }
