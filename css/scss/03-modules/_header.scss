@@ -38,6 +38,14 @@
     &--works {
         width: 500px;
         padding: 14px 95px 0px;
+
+        @media (max-width: 1000px) {
+            width: 100%;
+        }
+
+        @media (max-width: 650px) {
+            padding-left: 0;
+        }
     }
     @include m1600 {
         padding-top: 125px;
@@ -49,11 +57,35 @@
         margin-right: -2px;
         content: "";
     }
+
+    @media (max-height: 600px) {
+        overflow: auto;
+        padding-bottom: 0;
+        padding-top: 50px;
+
+        &:before {
+            display: none;
+        }
+    }
+
+    @media (max-width: 650px) {
+        width: 100%;
+        padding-right: 0;
+        text-align: center;
+    }
     nav {
         padding-left: 55px;
         display: inline-block;
         vertical-align: middle;
         max-width: 99%;
+
+        @media (max-height: 600px) {
+            margin-bottom: 50px;
+        }
+        @media (max-width: 650px) {
+            text-align: left;
+            padding-left: 0;
+        }
         ul {
             counter-reset: nav; 
             li {
@@ -94,6 +126,10 @@
     height: 100%;
     overflow: hidden;
     position: relative;
+
+    @media (max-width: 650px) {
+        display: none;
+    }
     .line {
         z-index: 1000;
         height: 100%;
@@ -146,6 +182,10 @@
 .sidebar--right {
     .sidebarSlider {
         width: calc(100% - 500px);
+
+        @media (max-width: 1000px) {
+            display: none;
+        }
     }
 }
 
@@ -180,6 +220,13 @@
     padding-right: 30px;
     @include m1600 {
         bottom: 10px;
+    }
+    @media (max-height: 600px) {
+        position: static;
+    }
+
+    @media (max-width: 650px) {
+        padding-right: 0;
     }
     &__item {
         display: inline-block;
@@ -365,6 +412,14 @@
     &:hover {
         background: transparent;
     }
+
+    @media (max-width: 1024px) {
+        right: 8px;
+    }
+
+    @media (max-width: 767px) {
+        right: 2px;
+    }
 }
 
 #menu-toggle.active,
@@ -404,6 +459,14 @@
 
 #menu-toggle-2.active {
     right: 470px;
+
+    @media (max-width: 1000px) {
+        right: 40px;
+    }
+
+    @media (max-width: 767px) {
+        right: 30px;
+    }
 }
 
 #fp-nav {
@@ -567,6 +630,7 @@
     position: fixed;
     top: 20px;
     right: 26px;
+    display: none;
 
     @media (max-width: 1024px) {
         right: 8px;

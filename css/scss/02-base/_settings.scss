@@ -60,6 +60,12 @@ h1 {
     left: 50%;
     transform: translate(-50%, 0);
     z-index: 10;
+
+    @media (max-width: 500px) {
+        top: 50px;
+        height: 40px;
+        line-height: 40px;
+    }
 }
 // lAYOUT
 // ---------------------------

@@ -14,7 +14,21 @@ $(window).on('load resize', function(event) {
     var vh = $(this).height() - 60;
     $('.partner-item').height( vh/5 );
 
-    $('.project-item').width( $('.projects-box').width()/4 );
+    
+    var wv = $(window).width();
+
+    if ( (wv > 950) ) {
+        projectWidth = $('.projects-box').width()/4;
+    } else if ( (wv <= 950) && (wv > 700 ) ) {
+        projectWidth = $('.projects-box').width()/3;
+    } else if ( (wv <= 700) && (wv > 500 ) ) {
+        projectWidth = $('.projects-box').width()/2;
+    } else if ( wv <= 500 ) {
+        projectWidth = $('.projects-box').width();
+    }
+
+    $('.project-item').width( projectWidth );
+    $('.scrollableArea').width( $('.scrollableArea').children().length*projectWidth );
 });
 
 
@@ -164,7 +178,16 @@ jQuery(document).ready(function($) {
             onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
         });    
     }
-    
+
+
+    /*
+        Contacts page
+    */
+    $('.open-form, .close-form').on('click', function(event) {
+        event.preventDefault();
+        /* Act on the event */
+        $('.contacts-info, .contacts-form').toggleClass('active');
+    });
 
 
 
@@ -296,5 +319,46 @@ jQuery(document).ready(function($) {
         });
         
     });
+
+
+    var map;
+    function googleMap_initialize() {
+        var lat = $('#map_canvas').data('lat');
+        var long = $('#map_canvas').data('lng');
+
+        var mapCenterCoord = new google.maps.LatLng(lat, long);
+        var mapMarkerCoord = new google.maps.LatLng(lat, long);
+
+
+        var mapOptions = {
+            center: mapCenterCoord,
+            zoom: 12,
+            //draggable: false,
+            disableDefaultUI: true,
+            scrollwheel: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        var styles = [{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}];
+
+
+        map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+        map.setOptions({styles: styles});
+        var markerImage = new google.maps.MarkerImage('images/location.png');
+        var marker = new google.maps.Marker({
+            icon: markerImage,
+            position: mapMarkerCoord, 
+            map: map,
+            title:"LeaderGate"
+        });
+      
+        $(window).resize(function (){
+            map.setCenter(mapCenterCoord);
+        });
+    }
+
+    if ( $('#map_canvas').length > 0) {
+        googleMap_initialize();   
+    }
 
 }); // end file
