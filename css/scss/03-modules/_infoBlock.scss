@@ -6,11 +6,16 @@
     max-height: 620px;
     position: absolute;
     background-color: #FFF;
-    left: 0; right: 0;
-    top: 0; bottom: 0;
-    margin:  auto;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin-top: 30px;
     padding: 23px;
     overflow: hidden;
+    z-index: 1;
 
     @media (max-width: 767px) {
         width: 100%;
@@ -18,6 +23,7 @@
         max-height: 100%;
         max-width: 100%;
         padding-top: 100px;
+        margin-top: 0;
     }
     p {
         margin-bottom: 25px;

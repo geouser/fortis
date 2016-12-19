@@ -4,14 +4,14 @@
 html,
 body {
 	height: 100%;
-    background-color: #FAFAFA;
+    background-color: #f9f9f9;
 }
 body {
     font: 14px $hm;
     color: $text;
     opacity: 0;
-    border-bottom: 30px solid #fafafa;
-    border-top: 30px solid #fafafa;
+    border-bottom: 30px solid #f9f9f9;
+    border-top: 30px solid #f9f9f9;
     -webkit-transform: scale(.9);
        -moz-transform: scale(.9);
         -ms-transform: scale(.9);
@@ -33,9 +33,9 @@ body {
 }
 
 .fullpage  {
-    border-left: 80px solid #fafafa;
-    border-right: 80px solid #fafafa;
-    background-color: #FAFAFA;
+    border-left: 80px solid #f9f9f9;
+    border-right: 80px solid #f9f9f9;
+    background-color: #f9f9f9;
     height: 100%;
 }
 

@@ -44,13 +44,13 @@ jQuery(document).ready(function($) {
     $('body').addClass('loaded');   
 
     setTimeout(function(){
-        $('.section--1 .section__title').addClass('magictime spaceInLeft');
+        $('.section--1 .section__title.animated').addClass('magictime spaceInLeft');
     }, 1000);
     setTimeout(function(){
-        $('.section--1 .section__text').addClass('magictime spaceInLeft');
+        $('.section--1 .section__text.animated').addClass('magictime spaceInLeft');
     }, 1600);
     setTimeout(function(){
-        $('.section--1 .button').addClass('magictime boingInUp');
+        $('.section--1 .button.animated').addClass('magictime boingInUp');
     }, 2400);
 
     /*---------------------------
@@ -158,13 +158,13 @@ jQuery(document).ready(function($) {
             onLeave: function(index, nextIndex, direction){},
             afterLoad: function(anchorLink, index){
                     setTimeout(function(){
-                        $('.active .section__title:not(.section--1 .section__title)').addClass('magictime spaceInLeft');
+                        $('.active .section__title.animated:not(.section--1 .section__title)').addClass('magictime spaceInLeft');
                     }, 100);
                     setTimeout(function(){
-                        $('.active .section__text:not(.section--1 .section__text)').addClass('magictime spaceInLeft');
+                        $('.active .section__text.animated:not(.section--1 .section__text)').addClass('magictime spaceInLeft');
                     }, 500);
                     setTimeout(function(){
-                        $('.active .button:not(.section--1 .button)').addClass('magictime boingInUp');
+                        $('.active .button.animated:not(.section--1 .button)').addClass('magictime boingInUp');
                     }, 1200);
                     $('.active .line').addClass('active');
                     clearInterval(interval);
@@ -362,7 +362,7 @@ jQuery(document).ready(function($) {
 
         map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
         map.setOptions({styles: styles});
-        var markerImage = new google.maps.MarkerImage('images/location.png');
+        var markerImage = new google.maps.MarkerImage('images/location.svg');
         var marker = new google.maps.Marker({
             icon: markerImage,
             position: mapMarkerCoord, 
